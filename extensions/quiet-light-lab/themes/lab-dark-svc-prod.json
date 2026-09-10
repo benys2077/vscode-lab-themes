@@ -12,13 +12,8 @@
     "activityBar.foreground": "#e6e6e6",
     "activityBar.inactiveForeground": "#e6e6e688",
     "activityBar.activeBorder": "#f0a89c",
-    "activityBarBadge.background": "#f0a89c",
+    "activityBarBadge.background": "#5fc4cc",
     "activityBarBadge.foreground": "#ffffff",
-    "sideBar.background": "#2a1b19",
-    "sideBar.foreground": "#d0d0d0",
-    "sideBarTitle.foreground": "#f0a89c",
-    "sideBarSectionHeader.background": "#5a302a",
-    "sideBarSectionHeader.foreground": "#f0a89c",
     "statusBar.background": "#4a2622",
     "statusBar.foreground": "#e6e6e6",
     "statusBarItem.hoverBackground": "#dc7a6c",
@@ -33,7 +28,7 @@
     "tab.activeForeground": "#e6e6e6",
     "tab.border": "#4a2622",
     "breadcrumb.background": "#221816",
-    "breadcrumb.foreground": "#b0b0b0",
+    "breadcrumb.foreground": "#4a4a4a",
     "breadcrumb.focusForeground": "#f0a89c",
     "breadcrumb.activeSelectionForeground": "#f0a89c",
     "panel.background": "#2a1b19",
@@ -48,7 +43,7 @@
     "button.background": "#dc7a6c",
     "button.foreground": "#ffffff",
     "button.hoverBackground": "#f0a89c",
-    "badge.background": "#dc7a6c",
+    "badge.background": "#5fc4cc",
     "badge.foreground": "#ffffff",
     "progressBar.background": "#dc7a6c",
     "textLink.foreground": "#f0a89c",
@@ -64,8 +59,8 @@
     "editor.selectionHighlightBackground": "#2a1b19",
     "editor.wordHighlightBackground": "#2a1b19",
     "editor.wordHighlightStrongBackground": "#5a302a",
-    "editor.findMatchBackground": "#4a2622",
-    "editor.findMatchHighlightBackground": "#5a302a",
+    "editor.findMatchBackground": "#1f3d40",
+    "editor.findMatchHighlightBackground": "#1f3d4099",
     "editorBracketMatch.background": "#5a302a",
     "editorBracketMatch.border": "#dc7a6c",
     "editorCursor.foreground": "#f0a89c",
@@ -75,7 +70,7 @@
     "editorIndentGuide.activeBackground1": "#4a2622",
     "editorWhitespace.foreground": "#5a302a",
     "editorRuler.foreground": "#2a1b19",
-    "editorCodeLens.foreground": "#dc7a6c",
+    "editorCodeLens.foreground": "#5fc4cc",
     "editorLink.activeForeground": "#f0a89c",
     "editorOverviewRuler.border": "#4a2622",
     "editorHoverWidget.background": "#2a1b19",
@@ -132,7 +127,7 @@
         "meta.function-call entity.name.function"
       ],
       "settings": {
-        "foreground": "#dc7a6c"
+        "foreground": "#5fc4cc"
       }
     },
     {
@@ -153,7 +148,7 @@
         "string.quoted"
       ],
       "settings": {
-        "foreground": "#d6b98a"
+        "foreground": "#5fc4cc"
       }
     },
     {
@@ -163,7 +158,7 @@
         "constant.character"
       ],
       "settings": {
-        "foreground": "#e0a86a"
+        "foreground": "#dc7a6c"
       }
     },
     {
@@ -190,7 +185,7 @@
         "entity.other.attribute-name"
       ],
       "settings": {
-        "foreground": "#dc7a6c"
+        "foreground": "#5fc4cc"
       }
     },
     {

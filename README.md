@@ -58,7 +58,7 @@ Every root can map to a pair, `{"light": ..., "dark": ...}`. The status bar show
 ## The themes
 
 - `Quiet Light (local)`: the bundled Quiet Light, unchanged.
-- `Quiet Light svc-dev` (blue), `Quiet Light svc-prod` (red), `Quiet Light dev-ubuntu` (green): light pastel frame (title bar, activity bar, status bar) with dark text, and the sidebar, tab strip, panel, selections, cursor, scrollbars and git decorations follow the accent. Syntax moves off Quiet Light's greens and purples: keywords, types and tags take the accent family, strings and numbers go warm neutral, comments stay grey italic.
+- `Quiet Light svc-dev` (blue), `Quiet Light svc-prod` (red), `Quiet Light dev-ubuntu` (green): light pastel frame (title bar, activity bar, status bar) with dark text, and the sidebar, tab strip, panel, selections, cursor, scrollbars and git decorations follow the accent. Each variant is two-tone, in the spirit of Quiet Light's purple and green: keywords, types and tags take the primary accent, functions, strings and attributes take a contrasting second tone (amber against the blue, teal against the coral, plum against the leaf green). The sidebar and secondary sidebar stay neutral so the file tree reads the same in every root.
 
 - `Lab Dark (local)` is the bundled Dark Modern; `Lab Dark svc-dev`, `Lab Dark svc-prod` and `Lab Dark dev-ubuntu` carry the same accent families on a dark paper.
 
@@ -67,7 +67,7 @@ Recolour by editing the palettes in `build-themes.py` (seven colours per variant
 ## Build from source
 
 ```bash
-cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.1.0.vsix
+cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.1.1.vsix
 cd ../folder-theme && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/folder-theme-0.1.0.vsix
 ```
 
