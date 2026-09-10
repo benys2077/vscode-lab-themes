@@ -1,7 +1,7 @@
 {
   "name": "quiet-light-lab",
-  "displayName": "Quiet Light lab variants",
-  "version": "0.0.1",
+  "displayName": "Quiet Light and Lab Dark variants",
+  "version": "0.1.0",
   "publisher": "benys",
   "description": "Quiet Light plus accent variants for the svc-dev, svc-prod and dev-ubuntu workspace roots.",
   "engines": {
@@ -31,6 +31,26 @@
         "label": "Quiet Light dev-ubuntu",
         "uiTheme": "vs",
         "path": "./themes/quiet-light-dev-ubuntu.json"
+      },
+      {
+        "label": "Lab Dark (local)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lab-dark-local.json"
+      },
+      {
+        "label": "Lab Dark svc-dev",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lab-dark-svc-dev.json"
+      },
+      {
+        "label": "Lab Dark svc-prod",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lab-dark-svc-prod.json"
+      },
+      {
+        "label": "Lab Dark dev-ubuntu",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lab-dark-dev-ubuntu.json"
       }
     ]
   },

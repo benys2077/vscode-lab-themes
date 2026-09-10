@@ -60,3 +60,28 @@ def variant(label, p):
 for f, (label, pal) in PALETTES.items():
     (ROOT / f).write_text(json.dumps(variant(label, pal), indent=2) + "\n", encoding="utf-8")
 print("wrote", len(PALETTES), "variants")
+
+# dark twins: same accent families on a dark paper (Dark Modern base). deep stays light for contrast on dark surfaces.
+DARK = {
+  "lab-dark-svc-dev.json":    ("Lab Dark svc-dev",    dict(light="#24364f", mid="#5b8fd6", deep="#9cc2f2", tint="#1b2533", wash="#2c4466", paper="#171d26", line="#1f2937")),
+  "lab-dark-svc-prod.json":   ("Lab Dark svc-prod",   dict(light="#4a2622", mid="#dc7a6c", deep="#f0a89c", tint="#2a1b19", wash="#5a302a", paper="#221816", line="#2f1f1c")),
+  "lab-dark-dev-ubuntu.json": ("Lab Dark dev-ubuntu", dict(light="#213a28", mid="#6fb47f", deep="#a6dbb1", tint="#182319", wash="#2c4a33", paper="#141c16", line="#1b271d")),
+}
+def dark_variant(label, p):
+    d = variant(label, p)
+    d["type"] = "dark"; d["include"] = "./lab-dark-base.json"
+    c = d["colors"]
+    for k in ("titleBar.activeForeground", "activityBar.foreground", "statusBar.foreground", "tab.activeForeground", "list.activeSelectionForeground", "menu.selectionForeground"):
+        c[k] = "#e6e6e6"
+    c.update({"titleBar.inactiveForeground": "#e6e6e699", "activityBar.inactiveForeground": "#e6e6e688", "sideBar.foreground": "#d0d0d0",
+              "breadcrumb.foreground": "#b0b0b0", "editorLineNumber.foreground": "#5f6b78", "input.background": p["tint"],
+              "editorWhitespace.foreground": p["wash"], "list.hoverBackground": p["wash"] + "80"})
+    swap = {"#6b5a3a": "#d6b98a", "#8a5a1e": "#e0a86a", "#2b2b2b": "#d4d4d4", "#8a8a82": "#7d8590"}
+    for t in d["tokenColors"]:
+        fg = t["settings"].get("foreground")
+        if fg in swap: t["settings"]["foreground"] = swap[fg]
+    return d
+for f, (label, pal) in DARK.items():
+    (ROOT / f).write_text(json.dumps(dark_variant(label, pal), indent=2) + "\n", encoding="utf-8")
+(ROOT / "lab-dark-local.json").write_text(json.dumps({"name": "Lab Dark (local)", "type": "dark", "include": "./lab-dark-base.json", "colors": {}}, indent=2) + "\n", encoding="utf-8")
+print("wrote", len(DARK) + 1, "dark themes")

@@ -100,11 +100,24 @@
       }
     },
     "folderTheme.map": {
-      "LOCAL  workstation (Development)": "Quiet Light (local)",
-      "S:  svc-dev dev-orion + app repos": "Quiet Light svc-dev",
-      "P:  svc-prod personal prod trees": "Quiet Light svc-prod",
-      "U:  dev-ubuntu agent lane repos": "Quiet Light dev-ubuntu"
+      "LOCAL  workstation (Development)": {
+        "light": "Quiet Light (local)",
+        "dark": "Lab Dark (local)"
+      },
+      "S:  svc-dev  dev-orion + app repos": {
+        "light": "Quiet Light svc-dev",
+        "dark": "Lab Dark svc-dev"
+      },
+      "P:  svc-prod  personal prod trees": {
+        "light": "Quiet Light svc-prod",
+        "dark": "Lab Dark svc-prod"
+      },
+      "U:  dev-ubuntu  agent lane repos": {
+        "light": "Quiet Light dev-ubuntu",
+        "dark": "Lab Dark dev-ubuntu"
+      }
     },
-    "workbench.colorTheme": "Quiet Light svc-dev"
+    "workbench.colorTheme": "Quiet Light svc-dev",
+    "folderTheme.mode": "light"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "name": "Lab Dark (local)",
+  "type": "dark",
+  "include": "./lab-dark-base.json",
+  "colors": {}
+}

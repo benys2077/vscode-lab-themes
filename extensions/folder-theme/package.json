@@ -2,7 +2,7 @@
   "name": "folder-theme",
   "displayName": "Folder Theme (local)",
   "description": "Switches the colour theme to match the workspace root folder of the active editor.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "benys",
   "engines": {
     "vscode": "^1.85.0"
@@ -18,10 +18,32 @@
         "folderTheme.map": {
           "type": "object",
           "default": {},
-          "description": "Workspace root folder name (as shown in the Explorer) to colour theme name. Set it in the .code-workspace settings."
+          "description": "Workspace root display name to a theme name, or to {\"light\": name, \"dark\": name}. Set in the .code-workspace settings."
+        },
+        "folderTheme.mode": {
+          "type": "string",
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "default": "light",
+          "description": "Which side of a {light, dark} map entry to use. Flip it with the status bar button, Ctrl+Alt+D, or the Folder Theme: Toggle command."
         }
       }
-    }
+    },
+    "commands": [
+      {
+        "command": "folderTheme.toggle",
+        "title": "Folder Theme: Toggle light/dark"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "folderTheme.toggle",
+        "key": "ctrl+alt+d",
+        "when": "!terminalFocus"
+      }
+    ]
   },
   "__metadata": {
     "installedTimestamp": 1789049687732,

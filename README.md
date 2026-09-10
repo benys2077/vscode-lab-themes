@@ -44,18 +44,31 @@ Any installed theme name works as a value, not only the ones shipped here. The s
 
 `example.code-workspace` is a fuller sample: Material Icon Theme root and folder icon associations (so git checkouts and deploy folders get distinct icons) and per-host SSH terminal profiles.
 
+## Light and dark
+
+Every root can map to a pair, `{"light": ..., "dark": ...}`. The status bar shows the current mode; click it, press `Ctrl+Alt+D`, or run "Folder Theme: Toggle light/dark" to flip the whole workspace. The mode is stored in the workspace file (`folderTheme.mode`), so each workspace remembers its own choice.
+
+```json
+"folderTheme.map": {
+  "LOCAL  my-app": { "light": "Quiet Light (local)", "dark": "Lab Dark (local)" },
+  "PROD  fileserver": { "light": "Quiet Light svc-prod", "dark": "Lab Dark svc-prod" }
+}
+```
+
 ## The themes
 
 - `Quiet Light (local)`: the bundled Quiet Light, unchanged.
 - `Quiet Light svc-dev` (blue), `Quiet Light svc-prod` (red), `Quiet Light dev-ubuntu` (green): light pastel frame (title bar, activity bar, status bar) with dark text, and the sidebar, tab strip, panel, selections, cursor, scrollbars and git decorations follow the accent. Syntax moves off Quiet Light's greens and purples: keywords, types and tags take the accent family, strings and numbers go warm neutral, comments stay grey italic.
 
-Rename or recolour by editing `extensions/quiet-light-lab/themes/*.json` (the three variants are generated from five colours each: light, mid, deep, tint, wash).
+- `Lab Dark (local)` is the bundled Dark Modern; `Lab Dark svc-dev`, `Lab Dark svc-prod` and `Lab Dark dev-ubuntu` carry the same accent families on a dark paper.
+
+Recolour by editing the palettes in `build-themes.py` (seven colours per variant: light, mid, deep, tint, wash, paper, line) and running `py build-themes.py`, then rebuild.
 
 ## Build from source
 
 ```bash
-cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.0.1.vsix
-cd ../folder-theme && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/folder-theme-0.0.1.vsix
+cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.1.0.vsix
+cd ../folder-theme && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/folder-theme-0.1.0.vsix
 ```
 
 `npx` fetches vsce on demand; nothing is installed globally.
