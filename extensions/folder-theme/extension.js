@@ -31,10 +31,14 @@ function currentFolder() {
   return folders.length ? folders[0].name : null;
 }
 
+let lastApplied = null;
+
 async function apply() {
   const name = currentFolder();
   const theme = name ? themeFor(name) : null;
-  if (theme && vscode.workspace.getConfiguration('workbench').get('colorTheme') !== theme) {
+  // Same theme as last time: skip the settings write entirely (that write is the slow part).
+  if (theme && theme !== lastApplied && vscode.workspace.getConfiguration('workbench').get('colorTheme') !== theme) {
+    lastApplied = theme;
     // Workspace scope only: user settings are never touched.
     await vscode.workspace.getConfiguration('workbench').update('colorTheme', theme, vscode.ConfigurationTarget.Workspace);
   }
@@ -47,6 +51,7 @@ async function apply() {
 
 async function toggle() {
   const next = mode() === 'dark' ? 'light' : 'dark';
+  lastApplied = null;
   await cfg().update('mode', next, vscode.ConfigurationTarget.Workspace);
   await apply();
 }
@@ -58,7 +63,7 @@ function activate(context) {
     status,
     vscode.commands.registerCommand('folderTheme.toggle', toggle),
     // Coalesce the burst of editor-change events a single click produces.
-    vscode.window.onDidChangeActiveTextEditor(() => { clearTimeout(timer); timer = setTimeout(apply, 120); }),
+    vscode.window.onDidChangeActiveTextEditor(() => { clearTimeout(timer); timer = setTimeout(apply, 30); }),
     vscode.workspace.onDidChangeConfiguration((e) => { if (e.affectsConfiguration('folderTheme')) apply(); }),
   );
   apply();
