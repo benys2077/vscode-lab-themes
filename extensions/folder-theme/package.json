@@ -2,7 +2,7 @@
   "name": "folder-theme",
   "displayName": "Folder Theme (local)",
   "description": "Switches the colour theme to match the workspace root folder of the active editor.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "benys",
   "engines": {
     "vscode": "^1.85.0"

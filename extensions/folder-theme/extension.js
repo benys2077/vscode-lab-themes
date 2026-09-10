@@ -3,6 +3,8 @@
 const vscode = require('vscode');
 
 let status;
+let lastFolder = null;
+let timer = null;
 
 function cfg() { return vscode.workspace.getConfiguration('folderTheme'); }
 function mode() { return cfg().get('mode') || 'light'; }
@@ -14,13 +16,18 @@ function themeFor(folderName) {
   return entry[mode()] || entry.light || entry.dark || null;
 }
 
+// Between two editors VS Code briefly reports no active editor. Falling back to the
+// first root there is what caused the flicker to the local theme, so keep the last
+// known root until a real editor with a workspace folder shows up.
 function currentFolder() {
   const editor = vscode.window.activeTextEditor;
-  const folders = vscode.workspace.workspaceFolders || [];
   if (editor) {
     const f = vscode.workspace.getWorkspaceFolder(editor.document.uri);
-    if (f) return f.name;
+    if (f) { lastFolder = f.name; return f.name; }
+    return lastFolder;
   }
+  if (lastFolder) return lastFolder;
+  const folders = vscode.workspace.workspaceFolders || [];
   return folders.length ? folders[0].name : null;
 }
 
@@ -50,7 +57,8 @@ function activate(context) {
   context.subscriptions.push(
     status,
     vscode.commands.registerCommand('folderTheme.toggle', toggle),
-    vscode.window.onDidChangeActiveTextEditor(apply),
+    // Coalesce the burst of editor-change events a single click produces.
+    vscode.window.onDidChangeActiveTextEditor(() => { clearTimeout(timer); timer = setTimeout(apply, 120); }),
     vscode.workspace.onDidChangeConfiguration((e) => { if (e.affectsConfiguration('folderTheme')) apply(); }),
   );
   apply();
