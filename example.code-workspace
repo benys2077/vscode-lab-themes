@@ -1,0 +1,110 @@
+{
+  "folders": [
+    {
+      "path": "C:/path/to/local/checkout",
+      "name": "LOCAL  workstation (Development)"
+    },
+    {
+      "path": "S:/",
+      "name": "S:  svc-dev dev-orion + app repos"
+    },
+    {
+      "path": "P:/",
+      "name": "P:  svc-prod personal prod trees"
+    },
+    {
+      "path": "U:/",
+      "name": "U:  dev-ubuntu agent lane repos"
+    }
+  ],
+  "settings": {
+    "window.title": "${rootName}${separator}${activeEditorShort}",
+    "files.exclude": {
+      "**/orion-personal-old": true,
+      "**/orion-personal-build": true,
+      "**/fightbook-prev-*": true,
+      "**/*.tar": true,
+      "**/*.bundle": true
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/.next/**": true,
+      "**/.git/objects/**": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true
+    },
+    "git.autoRepositoryDetection": "openEditors",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.rootFolders.associations": {
+      "LOCAL  workstation (Development)": "home",
+      "S:  svc-dev dev-orion + app repos": "server",
+      "P:  svc-prod personal prod trees": "cloud",
+      "U:  dev-ubuntu agent lane repos": "robot"
+    },
+    "material-icon-theme.folders.associations": {
+      "Orion-V2": "git",
+      "orion-v2": "git",
+      "TaskManager": "git",
+      "australian-pump-index": "git",
+      "agency": "git",
+      "benys-ai-bench": "git",
+      "deploy-lanes": "git",
+      "orion-personal": "docker",
+      "fightbook": "dist",
+      "lastlight": "dist",
+      "lastlight-redirect": "dist"
+    },
+    "terminal.integrated.profiles.windows": {
+      "ssh svc-dev ": {
+        "path": "ssh.exe",
+        "args": [
+          "-t",
+          "svc-dev",
+          "cd /home/benys/repos; exec bash -l"
+        ],
+        "icon": "server",
+        "color": "terminal.ansiBlue"
+      },
+      "ssh svc-prod ": {
+        "path": "ssh.exe",
+        "args": [
+          "-t",
+          "prod",
+          "cd /home/benys/app; exec bash -l"
+        ],
+        "icon": "cloud",
+        "color": "terminal.ansiRed"
+      },
+      "ssh dev-ubuntu ": {
+        "path": "ssh.exe",
+        "args": [
+          "-t",
+          "dev",
+          "cd /home/benys/repos; exec bash -l"
+        ],
+        "icon": "vm",
+        "color": "terminal.ansiGreen"
+      },
+      "ssh web-prod ": {
+        "path": "ssh.exe",
+        "args": [
+          "-t",
+          "web-prod",
+          "exec bash -l"
+        ],
+        "icon": "globe",
+        "color": "terminal.ansiMagenta"
+      }
+    },
+    "folderTheme.map": {
+      "LOCAL  workstation (Development)": "Quiet Light (local)",
+      "S:  svc-dev dev-orion + app repos": "Quiet Light svc-dev",
+      "P:  svc-prod personal prod trees": "Quiet Light svc-prod",
+      "U:  dev-ubuntu agent lane repos": "Quiet Light dev-ubuntu"
+    },
+    "workbench.colorTheme": "Quiet Light svc-dev"
+  }
+}

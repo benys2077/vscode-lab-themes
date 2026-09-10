@@ -1,0 +1,6 @@
+{
+  "name": "Quiet Light (local)",
+  "type": "light",
+  "include": "./quiet-light-base.json",
+  "colors": {}
+}

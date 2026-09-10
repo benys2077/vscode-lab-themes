@@ -1,0 +1,36 @@
+{
+  "name": "folder-theme",
+  "displayName": "Folder Theme (local)",
+  "description": "Switches the colour theme to match the workspace root folder of the active editor.",
+  "version": "0.0.1",
+  "publisher": "benys",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Folder Theme",
+      "properties": {
+        "folderTheme.map": {
+          "type": "object",
+          "default": {},
+          "description": "Workspace root folder name (as shown in the Explorer) to colour theme name. Set it in the .code-workspace settings."
+        }
+      }
+    }
+  },
+  "__metadata": {
+    "installedTimestamp": 1789049687732,
+    "targetPlatform": "undefined",
+    "size": 3447
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benys2077/vscode-lab-themes"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "quiet-light-lab",
+  "displayName": "Quiet Light lab variants",
+  "version": "0.0.1",
+  "publisher": "benys",
+  "description": "Quiet Light plus accent variants for the svc-dev, svc-prod and dev-ubuntu workspace roots.",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Quiet Light (local)",
+        "uiTheme": "vs",
+        "path": "./themes/quiet-light-local.json"
+      },
+      {
+        "label": "Quiet Light svc-dev",
+        "uiTheme": "vs",
+        "path": "./themes/quiet-light-svc-dev.json"
+      },
+      {
+        "label": "Quiet Light svc-prod",
+        "uiTheme": "vs",
+        "path": "./themes/quiet-light-svc-prod.json"
+      },
+      {
+        "label": "Quiet Light dev-ubuntu",
+        "uiTheme": "vs",
+        "path": "./themes/quiet-light-dev-ubuntu.json"
+      }
+    ]
+  },
+  "__metadata": {
+    "installedTimestamp": 1789049670474,
+    "targetPlatform": "undefined",
+    "size": 15604
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benys2077/vscode-lab-themes"
+  },
+  "license": "MIT"
+}
