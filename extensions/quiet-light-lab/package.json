@@ -1,7 +1,7 @@
 {
   "name": "quiet-light-lab",
   "displayName": "Quiet Light and Lab Dark variants",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "benys",
   "description": "Quiet Light plus accent variants for the svc-dev, svc-prod and dev-ubuntu workspace roots.",
   "engines": {

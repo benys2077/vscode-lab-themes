@@ -67,7 +67,7 @@ Recolour by editing the palettes in `build-themes.py` (seven colours per variant
 ## Build from source
 
 ```bash
-cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.1.1.vsix
+cd extensions/quiet-light-lab && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/quiet-light-lab-0.1.2.vsix
 cd ../folder-theme && npx @vscode/vsce package --allow-missing-repository --skip-license -o ../../dist/folder-theme-0.1.1.vsix
 ```
 
